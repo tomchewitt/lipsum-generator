@@ -1,0 +1,46 @@
+// *****************************************************************
+// VARS
+// *****************************************************************
+$darkgreen: #037351;
+$midgreenL #05BF87;
+
+
+$font-stack: 'Bitter', serif;
+
+// *****************************************************************
+// STRUCTURE ADDONS
+// *****************************************************************
+:focus { 
+	outline:0;
+}
+
+::selection {
+	background: black;
+	color: white;
+}
+
+html, body {
+	height: 100%;
+}
+
+
+// *****************************************************************
+// MIXINS
+// *****************************************************************
+@mixin fontface($name, $argument...) {
+    font-family: '#{$name}';
+    src: url('../../font/#{$argument}-webfont.eot');
+    src: url('../../font/#{$argument}-webfont.eot?#iefix') format('embedded-opentype'),
+    	 url('../../font/#{$argument}-webfont.woff2') format('woff2'),
+         url('../../font/#{$argument}-webfont.woff') format('woff'),
+         url('../../font/#{$argument}-webfont.ttf') format('truetype'),
+         url('../../font/#{$argument}-webfont.svg##{$name}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// *****************************************************************
+// KAYFRAMES
+// *****************************************************************
+
