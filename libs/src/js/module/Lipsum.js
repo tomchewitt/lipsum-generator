@@ -36,9 +36,17 @@ var Lipsum = (function() {
 
 	Lipsum.getUrlParams = function() {
 		for (var i = 0; i < params.length; i++) {
-			params[i].val = decodeURIComponent((new RegExp('[?|&]' + params[i].name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||params[i].val;
+			var newparam = decodeURIComponent((new RegExp('[?|&]' + params[i].name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||params[i].val;
+
+			if (!your_string.indexOf('/')) {
+				newparam.slice(0,-1);
+			 }
+
+			 params[i].val = newparam;
 		}
+
 		console.log(params);
+		
 	}
 
 	Lipsum.setUrlParams = function() {
@@ -50,13 +58,3 @@ var Lipsum = (function() {
 	return Lipsum;
 
 })();
-
-// *****************************************************************
-// INIT
-// *****************************************************************
-(function() {
-	var textarea = document.querySelector('.lipsum-text');
-	
-	Lipsum.getUrlParams();
-})();
-

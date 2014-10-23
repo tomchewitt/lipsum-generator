@@ -13,7 +13,8 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: [
-					'libs/src/js/script/*.js'],
+					'libs/src/js/module/Lipsum.js',
+					'libs/src/js/script/init.js'],
 				dest: 'libs/src/js/bundle.js'
 			}
 		},
