@@ -22,7 +22,31 @@ section.header {
 	background: #444;
 }
 
+// *****************************************************************
+// CONTROLS
+// *****************************************************************
+.controls {
+	.control {
+		display: inline-block;
+		margin: 10px;
+	}
+}
 
+// *****************************************************************
+// GENERATOR
+// *****************************************************************
+textarea {
+	width: 800px;
+	// height: 900px;
+	overflow: hidden;
+	resize: none;
+	font-family: $font-stack;
+	font-size: 18px;
+	line-height: 26px;
+	padding: 20px;
+	background: none;
+	border-radius: 15px;
+}
 
 // *****************************************************************
 // MEDIA QUERIES
