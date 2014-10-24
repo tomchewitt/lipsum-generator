@@ -32,10 +32,12 @@ var Lipsum = (function() {
 		}
 
 		// setup new text paras
-		for (var i = 0; i < parseInt(params[0].val); i++) {
+		for (var i = 1; i <= parseInt(params[0].val); i++) {
 			newTextParas += newTextWords;
 
-			if (!i == (parseInt(params[0].val)-1)) {
+			console.log(i, parseInt(params[0].val), !(parseInt(params[0].val) == i));
+
+			if (!(parseInt(params[0].val) == i)) {
 				 newTextParas += '&#10;&#10;';
 			}
 		}
@@ -76,8 +78,12 @@ var Lipsum = (function() {
 		}
 		console.log(params);
 
-		// update values for user
-		//...
+
+		/*********/
+		// TO DO
+		// update values for user....
+		/*********/
+
 
 		// generate text
 		generate();
