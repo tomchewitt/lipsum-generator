@@ -6,17 +6,19 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 	text-align: center;
-	background: $darkgreen;
+	background: $midgreen;
 }
 
-section {
-	width: 100%;
+::selection {
+	background: $darkgreen;
+	color: white;
 }
 
 // *****************************************************************
 // HEADER
 // *****************************************************************
 section.header {
+	width: 100%;
 	height: 100px;
 	display: block;
 	background: #444;
@@ -25,28 +27,97 @@ section.header {
 // *****************************************************************
 // CONTROLS
 // *****************************************************************
-.controls {
+section.controls {
+	$width: 150px;
+
+	width: $width * 5;
+	padding-top: 80px;
+	height: 70px;
+	position: relative;
+	left: 50%;
+	margin-left: 0 - ($width * 5) / 2;
+
 	.control {
-		display: inline-block;
-		margin: 10px;
+		float: left;
+		background: #999;
+		width: $width;
+		position: relative;
+
+		label {
+			width: 80%;
+			display: block;
+			position: absolute;
+			top: -60px;
+			left: 10%;
+			padding-bottom: 20px;
+			border-bottom: solid 1px #000;
+		}
+	}
+
+	input {
+		font-family: $font-stack;
+		font-size: 28px;
+		text-align: center;
+	}
+
+	input[type="checkbox"] {
+	    
+	}
+
+	input[type="checkbox"] {	    
+	    background: $lightgreen;
+	    cursor:pointer;
+	}
+
+	input[type="checkbox"]:checked {
+	    
+	}
+
+	.less, .more {
+		text-indent: -9999px;
+		width: 0;
+		height: 0;
+	    position: absolute;
+	    top: 0;
+	}
+
+	.less {
+		left: 10%;
+		border-right: 20px solid #000;
+	    border-top: 20px solid transparent;
+	    border-bottom: 20px solid transparent;
+	}
+	.more {
+		right: 10%;
+		border-left: 20px solid #000;
+	    border-top: 20px solid transparent;
+	    border-bottom: 20px solid transparent;
 	}
 }
+
 
 // *****************************************************************
 // GENERATOR
 // *****************************************************************
-textarea {
-	width: 800px;
-	// height: 900px;
-	overflow: hidden;
-	resize: none;
-	font-family: $font-stack;
-	font-size: 18px;
-	line-height: 26px;
-	padding: 20px;
-	background: none;
-	border-radius: 15px;
+section.generator {
+	width: 100%;
+	clear: both;
+
+	textarea {
+		width: 80%;
+		overflow: hidden;
+		resize: none;
+		font-family: $font-stack;
+		font-size: 18px;
+		line-height: 26px;
+		padding: 40px 10% 10px 10%;
+		border: none;
+		background: $darkgreen;
+		color: $lightgreen;
+	}
+
 }
+
 
 // *****************************************************************
 // MEDIA QUERIES

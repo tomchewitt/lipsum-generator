@@ -1,8 +1,9 @@
 // *****************************************************************
 // VARS
 // *****************************************************************
-$darkgreen: #037351;
-$midgreen: #05BF87;
+$lightgreen: #05BF87;
+$midgreen: #037351;
+$darkgreen: #1D3B32;
 
 
 $font-stack: 'Bitter', serif;
@@ -12,11 +13,6 @@ $font-stack: 'Bitter', serif;
 // *****************************************************************
 :focus { 
 	outline:0;
-}
-
-::selection {
-	background: black;
-	color: white;
 }
 
 html, body {

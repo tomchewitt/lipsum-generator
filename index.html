@@ -22,20 +22,28 @@
 
         <section class="controls">
             <div class="control paras">
-                <span class="arrow less">Less</span>
-                <input type="text" placeholder="DEFAULT">
-                <span class="arrow more">More</span>
+                <label>Paragraphs</label>
+                <a class="arrow less">Less</a>
+                <input class="paras-input" type="text" placeholder="0"  maxlength="3" size="3">
+                <a class="arrow more">More</a>
             </div>
             <div class="control words">
-                <span class="arrow less">Less</span>
-                <input type="text" placeholder="DEFAULT">
-                <span class="arrow more">More</span>
+                <label>Words</label>
+                <a class="arrow less">Less</a>
+                <input class="words-input" type="text" placeholder="0"  maxlength="3" size="3">
+                <a class="arrow more">More</a>
             </div>
             <div class="control tags">
-                <input type="checkbox">
+                <label>Tags</label>
+                <input class="tags-input" type="checkbox">
             </div>
             <div class="control wars">
-                <input type="checkbox">
+                <label>Wars...</label>
+                <input class="wars-input" type="checkbox">
+            </div>
+            <div class="control meta">
+                <label>Total Words</label>
+                <input class="meta-input" type="text" placeholder="0" size="5" readonly>
             </div>
         </section>
 
