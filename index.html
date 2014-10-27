@@ -14,6 +14,14 @@
     </head>
     <body>
 
+        <svg class="svg-defs">
+            <defs>
+                <symbol id="arrow" viewBox="0 0 103.5 192.2">
+                    <path d="M18,96.1l83.3-83.3c2.9-2.9,2.9-7.7,0-10.6c-2.9-2.9-7.7-2.9-10.6,0L2.2,90.7C0.7,92.2,0,94.1,0,96.1c0,1.9,0.7,3.9,2.2,5.4 L90.7,190c2.9,2.9,7.7,2.9,10.6,0c2.9-2.9,2.9-7.7,0-10.6L18,96.1z"/>
+                </symbol>
+            </defs>
+        </svg>
+
         <section class="header">
             <header>
                 <h1>Lipsum Generator | A @tomchewitt Experiment</h1>
@@ -22,36 +30,62 @@
 
         <section class="controls">
             <div class="control paras">
-                <label>Paragraphs</label>
-                <a class="arrow less">Less</a>
+                <label class="label">Paragraphs</label>
+                <a class="arrow less">
+                    <svg>
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </a>
                 <input class="paras-input" type="text" placeholder="0"  maxlength="3" size="3">
-                <a class="arrow more">More</a>
+                <a class="arrow more">
+                    <svg>
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </a>
             </div>
             <div class="control words">
-                <label>Words</label>
-                <a class="arrow less">Less</a>
+                <label class="label">Words</label>
+                <a class="arrow less">
+                    <svg>
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </a>
                 <input class="words-input" type="text" placeholder="0"  maxlength="3" size="3">
-                <a class="arrow more">More</a>
+                <a class="arrow more">
+                    <svg>
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </a>
             </div>
             <div class="control tags">
-                <label>Tags</label>
-                <input class="tags-input" type="checkbox">
+                <label class="label">Tags</label>
+                <div class="check">
+                    <input class="tags-input" id="tags-input" type="checkbox">
+                    <label for="tags-input"></label>
+                </div>
             </div>
             <div class="control wars">
-                <label>Wars...</label>
-                <input class="wars-input" type="checkbox">
+                <label class="label">Wars...</label>
+                <div class="check">
+                    <input class="wars-input" id="wars-input" type="checkbox">
+                    <label for="wars-input"></label>
+                </div>
             </div>
             <div class="control meta">
-                <label>Total Words</label>
+                <label class="label">Total Words</label>
                 <input class="meta-input" type="text" placeholder="0" size="5" readonly>
             </div>
         </section>
 
         <section class="generator">
-            
             <textarea class="lipsum-text" readonly></textarea>
-
         </section>
+
+
+        <div class="slideOne">  
+            <input type="checkbox" value="None" id="slideOne" name="check" />
+            <label for="slideOne"></label>
+        </div>
 
 
         <!-- LIVERELOAD -->
@@ -65,5 +99,4 @@
         
     </body>
 </html>
-
 

@@ -28,7 +28,7 @@ var Lipsum = (function() {
 	function generate() {
 		var $textarea = document.querySelector('.lipsum-text');
 		var newTextWords = '';
-		var newTextParas = '';
+		var newText = '';
 		var textArr;
 		var i;
 		var j;
@@ -60,34 +60,51 @@ var Lipsum = (function() {
 
 			// no tags
 			for (var i = 1; i <= parseInt(params[0].val); i++) {
-				newTextParas += newTextWords;
+				newText += newTextWords;
+
+				// remove space from final character
+				if (newText.substr(newText.length - 1) == ' ') {
+					newText = newText.replace(/\s*$/, '');
+				}
+				// add full stop if required
+				if (!(newText.substr(newText.length - 1) == '.')) {
+					newText += '.';
+				}
 
 				if (!(parseInt(params[0].val) == i)) {
-					 newTextParas += '&#10;&#10;';
+					 newText += '&#10;&#10;';
 				}
 			}
 		} else {
 
 			// with tags
 			for (var i = 1; i <= parseInt(params[0].val); i++) {
-				newTextParas += '<p>' + newTextWords + '</p>';
+				newText += '<p>' + newTextWords;
+
+				// remove space from final character
+				if (newText.substr(newText.length - 1) == ' ') {
+					newText = newText.replace(/\s*$/, '');
+				}
+				// add full stop if required
+				if (!(newText.substr(newText.length - 1) == '.')) {
+					newText += '.';
+				}
+
+				newText += '</p>';
 
 				if (!(parseInt(params[0].val) == i)) {
-					 newTextParas += '&#10;&#10;';
+					 newText += '&#10;&#10;';
 				}
 			}
 		}
 
-		//****************************/
-		// TO DO
-		// add full stop to final word...
-		//****************************/ 
+
 
 		// setup the new url for bookmarking
 		setUrlParams();
 
 		// finish by setting, stretching $textarea
-		$textarea.innerHTML = (newTextParas);
+		$textarea.innerHTML = (newText);
 		$textarea.style.height = 0;
 		$textarea.style.height = $textarea.scrollHeight + "px";	
 	}
@@ -95,10 +112,19 @@ var Lipsum = (function() {
 
 	// SET THE URL PARAMS FOR BOOKMARKING
 	function setUrlParams() {
-		//****************************/
-		// TO DO
-		// bookmarking url
-		//****************************/
+		var stateObject = {};
+		var title = 'Lipsum Generator | An @tomchewitt Experiment';
+		var newUrl = '?paras=' + params[0].val + '&words=' + params[1].val;
+
+		// add to newUrl
+		if (params[2].val == '1') {
+			newUrl += '&tags=1';
+		}
+		if (params[3].val == '1') {
+			newUrl += '&wars=1';
+		}
+
+		history.pushState(stateObject,title,newUrl);
 	}
 
 
