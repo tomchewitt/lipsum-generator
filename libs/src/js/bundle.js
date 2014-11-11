@@ -9,20 +9,14 @@ var Lipsum = (function() {
 	// private
 	var defaultText = {
 		normal: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-
-		wars: 'Lucas...'
-
-		//****************************/
-		// TO DO
-		// make lucas text
-		//****************************/
+		hodor: 'Hodor hodor hodor, hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor. Hodor hodor hodor, hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor. Hodor hodor hodor, hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor. Hodor hodor hodor, hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor. Hodor hodor hodor, hodor hodor hodor hodor hodor hodor hodor hodor hodor hodor.'
 	}
 
 	var params = [
 		{ name: 'paras', val: '1' },
 		{ name: 'words', val: '69' },
 		{ name: 'tags', val: '0' },
-		{ name: 'wars', val: '0' }
+		{ name: 'hodor', val: '0' }
 	];
 
 	function generate() {
@@ -37,7 +31,7 @@ var Lipsum = (function() {
 		if (params[3].val == 0) {
 			textArr = defaultText['normal'].split(' ');
 		} else {
-			textArr = defaultText['wars'].split(' ');
+			textArr = defaultText['hodor'].split(' ');
 		}
 
 		// setup new text words
@@ -121,7 +115,7 @@ var Lipsum = (function() {
 			newUrl += '&tags=1';
 		}
 		if (params[3].val == '1') {
-			newUrl += '&wars=1';
+			newUrl += '&hodor=1';
 		}
 
 		history.pushState(stateObject,title,newUrl);
@@ -133,7 +127,7 @@ var Lipsum = (function() {
 		var $paras = document.querySelector('.paras-input');
 		var $words = document.querySelector('.words-input');
 		var $tags = document.querySelector('.tags-input');
-		var $wars = document.querySelector('.wars-input');
+		var $hodor = document.querySelector('.hodor-input');
 		
 		// update paras
 		$paras.value = params[0].val;
@@ -148,11 +142,11 @@ var Lipsum = (function() {
 			$tags.checked = true;
 		}
 
-		// update wars
+		// update hodor
 		if (params[3].val == 0) {
-			$wars.checked = false;
+			$hodor.checked = false;
 		} else {
-			$wars.checked = true;
+			$hodor.checked = true;
 		}
 
 		// update meta
@@ -265,8 +259,8 @@ var Lipsum = (function() {
 		Lipsum.update('tags', newvalue);
 	});
 
-	// WARS
-	document.querySelector('.wars-input').addEventListener('change', function() {
+	// hodor
+	document.querySelector('.hodor-input').addEventListener('change', function() {
 
 		var newvalue;
 
@@ -276,7 +270,7 @@ var Lipsum = (function() {
 			newvalue = '0';
 		}
 
-		Lipsum.update('wars', newvalue);
+		Lipsum.update('hodor', newvalue);
 	});
 
 	// TEXT SELECT

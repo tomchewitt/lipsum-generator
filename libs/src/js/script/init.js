@@ -64,8 +64,8 @@
 		Lipsum.update('tags', newvalue);
 	});
 
-	// WARS
-	document.querySelector('.wars-input').addEventListener('change', function() {
+	// hodor
+	document.querySelector('.hodor-input').addEventListener('change', function() {
 
 		var newvalue;
 
@@ -75,7 +75,7 @@
 			newvalue = '0';
 		}
 
-		Lipsum.update('wars', newvalue);
+		Lipsum.update('hodor', newvalue);
 	});
 
 	// TEXT SELECT

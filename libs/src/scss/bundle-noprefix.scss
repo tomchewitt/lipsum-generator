@@ -121,9 +121,13 @@ input[type="checkbox"] {
 }
 .more {
 	right: 17%;
-	svg {
-		transform: rotate(180deg);
-	}
+
+	// FIRFOX DOESN'T LIKE THIS
+	// svg {
+	// 	transform: rotate(180deg);
+	// }
+
+	transform: rotate(180deg);
 }
 .arrow:hover {
 	svg {
