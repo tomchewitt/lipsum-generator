@@ -23,9 +23,12 @@ body {
 // *****************************************************************
 section.header {
 	width: 100%;
-	height: 100px;
 	display: block;
-	background: #444;
+	background: rgba($darkgreen, 0.6);
+	padding: 40px 0;
+	margin-bottom: 10px;
+	font-size: 48px;
+	color: white;
 }
 
 // *****************************************************************
@@ -141,21 +144,56 @@ input[type="checkbox"] {
 // *****************************************************************
 section.generator {
 	width: 100%;
+	position: relative;
 	clear: both;
 
 	textarea {
-		width: 80%;
+		width: 60%;
 		overflow: hidden;
 		resize: none;
 		font-family: $font-stack;
 		font-size: 18px;
 		line-height: 26px;
-		padding: 40px 10% 10px 10%;
+		padding: 60px 20% 0 20%;
 		border: none;
 		background: $darkgreen;
 		color: $lightest;
 	}
 
+}
+
+
+// *****************************************************************
+// ABOUT
+// *****************************************************************
+section.footer {
+	width: 100%;
+	color: $lightgreen;
+	padding: 50px 0;
+
+	p {
+		width: 60%;
+		margin: 0 auto;
+		text-align: left;
+		font-style: italic;
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: 1px;
+		text-align: center;
+
+		a {
+			color: $lightgreen;
+			text-decoration: none;
+			border-bottom: dotted 1px $lightgreen;
+			transition: all 0.3s ease-out;
+
+			&:hover {
+				color: $lightest;
+				border-bottom: dotted 1px $lightest;
+
+			}
+		}
+	}
 }
 
 
