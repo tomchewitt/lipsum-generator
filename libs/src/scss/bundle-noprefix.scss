@@ -13,7 +13,7 @@ body {
 	display: none;
 }
 
-::selection {
+::selection, ::-moz-selection, textarea::selection, textarea::-moz-selection {
 	background: $darkgreen;
 	color: white;
 }
